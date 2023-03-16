@@ -1,10 +1,10 @@
 <script lang="ts">
 import { ref } from 'vue'
-import FirstBeatButton from '../sound_components/beat_buttons.vue/FirstBeatButton.vue'
-import SecondBeatButton from '../sound_components/beat_buttons.vue/SecondBeatButton.vue'
-import FourthBeatButton from '../sound_components/beat_buttons.vue/FourthBeatButton.vue'
-import ThirdBeatButton from '../sound_components/beat_buttons.vue/ThirdBeatButton.vue'
-import FifthBeatButton from '../sound_components/beat_buttons.vue/FifthBeatButton.vue'
+import FirstBeatButton from '../sound_components/beat_buttons/FirstBeatButton.vue'
+import SecondBeatButton from '../sound_components/beat_buttons/SecondBeatButton.vue'
+import FourthBeatButton from '../sound_components/beat_buttons/FourthBeatButton.vue'
+import ThirdBeatButton from '../sound_components/beat_buttons/ThirdBeatButton.vue'
+import FifthBeatButton from '../sound_components/beat_buttons/FifthBeatButton.vue'
 export default {
   setup() {
     let volume = ref(0.1)

@@ -48,7 +48,6 @@ export default {
   color: blue;
   opacity: 1;
 }
-
 .change-beat {
   cursor: pointer;
   background-color: red;

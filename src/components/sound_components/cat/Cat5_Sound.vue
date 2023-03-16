@@ -1,13 +1,13 @@
 <script lang="ts">
 import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
-import yellow from '@/assets/sounds/cats/yellow.wav'
+import pers from '@/assets/sounds/cats/pers.mp3'
 // import Button from './Button.vue'
 export default {
   // components: { Button },
   setup() {
-    const volume = ref(1)
-    const { play } = useSound(yellow, {
+    const volume = ref(0.1)
+    const { play } = useSound(pers, {
       volume,
       interrupt: true
     })
@@ -23,19 +23,19 @@ export default {
 </script>
 
 <template>
-  <img src="@/assets/imagesAll/orange.png" alt="" class="cat7" @click="handleClick" />
+  <img src="@/assets/imagesAll/pers.png" alt="pers  white" @click="handleClick" class="cat5" />
 </template>
 <style>
-.cat7 {
+.cat5 {
   cursor: pointer;
-  width: 170px;
+  width: 240px;
   position: absolute;
-  left: 270px;
-  bottom: 270px;
-  z-index: 1;
+  left:380px;
+  bottom: -60px;
+  z-index: 90;
   transition: width 0.3s ease-in-out;
 }
-.cat7:hover{
-    width: 180px;
+.cat5:hover{
+    width: 250px;
 }
 </style>

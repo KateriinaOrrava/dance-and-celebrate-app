@@ -26,17 +26,18 @@ export default {
   <img
     src="@/assets/imagesAll/Screenshot 2023-03-15 195538.png"
     alt=""
-    class="cat2"
+    class="cat2 grumpy"
     @click="handleClick"
   />
 </template>
 <style>
 .cat2 {
   cursor: pointer;
-  width: 200px;
+  width: 180px;
+  transform: rotate(10deg);
   cursor: pointer;
   position: absolute;
-  left: 110px;
+  left: -10px;
   bottom: 200px;
   z-index: 3;
   transition: width 0.3s ease-in-out;

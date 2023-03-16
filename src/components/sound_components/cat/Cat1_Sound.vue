@@ -26,12 +26,12 @@ export default {
 </template>
 <style>
 .cat1 {
-  width: 200px;
+  width: 230px;
   cursor: pointer;
   position: absolute;
-  left: 0px;
-  bottom: 170px;
-  z-index: 3;
+  left:320px;
+  bottom: 0px;
+  z-index: 30;
   transition: width 0.3s ease-in-out;
 }
 .cat1:hover{

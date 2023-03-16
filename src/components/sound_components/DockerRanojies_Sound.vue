@@ -24,9 +24,6 @@ export default {
 </script>
 
 <template class="janis-container">
-<!--     
-  <Button @click="handleClick" label="Control knobs">docker ranojies</Button>
-  <div @click="handleClick">this is music div</div> -->
   <Larkstet_Sound/>
   <TiksimGala_Sound/>
   <img src="../assets/imagesAll/ja.png" alt="jānis" @click="handleClick" class="janis-container__image"/>
@@ -34,5 +31,4 @@ export default {
 <style>
 .janis-janis-container__image{
   cursor: pointer;
-
 }</style>
