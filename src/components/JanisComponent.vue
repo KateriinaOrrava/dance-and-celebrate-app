@@ -41,9 +41,6 @@ export default {
 </script>
 
 <template class="janis-container">
-  <!--     
-  <Button @click="handleClick" label="Control knobs">docker ranojies</Button>
-  <div @click="handleClick">this is music div</div> -->
   <div>
     <Larkstet_Sound />
     <Cat1_Sound></Cat1_Sound>
@@ -65,14 +62,14 @@ export default {
 <style>
 .janis-container__image {
   width: 300px;
-cursor:pointer;
+  cursor: pointer;
   position: absolute;
   left: 50px;
   bottom: 200px;
   transition: width 0.3s ease-in-out;
 }
-.janis-container__image:hover{
-    width: 330px;
+.janis-container__image:hover {
+  width: 330px;
 }
 .janis-container {
   position: relative;

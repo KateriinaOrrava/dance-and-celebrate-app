@@ -1,7 +1,7 @@
 <script lang="ts">
 import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
-import cute from '@/assets/sounds/cats/cute.wav'
+import cute from '@/assets/sounds/cats/orange.wav'
 
 export default {
   setup() {

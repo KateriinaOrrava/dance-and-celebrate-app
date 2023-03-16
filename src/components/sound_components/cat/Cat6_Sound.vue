@@ -2,9 +2,7 @@
 import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
 import orange from '@/assets/sounds/cats/orange.mp3'
-// import Button from './Button.vue'
 export default {
-  // components: { Button },
   setup() {
     const volume = ref(0.1)
     const { play } = useSound(orange, {

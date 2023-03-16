@@ -1,8 +1,7 @@
 <script lang="ts">
 import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
-import yellow from '@/assets/sounds/cats/yellow.wav'
-// import Button from './Button.vue'
+import yellow from '@/assets/sounds/cats/orange.wav'
 export default {
   // components: { Button },
   setup() {
