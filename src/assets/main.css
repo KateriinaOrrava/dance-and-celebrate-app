@@ -1,0 +1,21 @@
+#app {
+  background-size: 70% 100%;
+  background-position: center;
+  background-image: url('../assets/imagesAll/giphy.gif');
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+html {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
