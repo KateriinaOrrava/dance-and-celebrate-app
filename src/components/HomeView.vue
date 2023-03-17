@@ -1,13 +1,7 @@
-<template>
-  <div class="content-container">
-    <div class="content-container__janis-part"><JanisComponent /></div>
-    <div class="content-container__elvis-part"><ElvisComponents /></div>
-  </div>
-</template>
-
 <script lang="ts">
 import JanisComponent from '@/components/JanisComponent.vue'
 import ElvisComponents from '@/components/ElvisComponent.vue'
+import Volume_Component from './Volume_Component.vue'
 
 import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
@@ -16,6 +10,7 @@ export default {
   components: {
     JanisComponent,
     ElvisComponents,
+    Volume_Component,
   },
   setup() {
     const volume = ref(1)
@@ -32,7 +27,13 @@ export default {
   }
 }
 </script>
-
+<template>
+  <Volume_Component/>
+  <div class="content-container">
+    <div class="content-container__janis-part"><JanisComponent /></div>
+    <div class="content-container__elvis-part"><ElvisComponents /></div>
+  </div>
+</template>
 <style>
 .content-container {
   /* width: 100%; */

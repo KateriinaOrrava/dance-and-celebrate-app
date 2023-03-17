@@ -2,8 +2,10 @@
 import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
 import ranojies from '../assets/sounds/voices/dockeri_ranojies.mp3'
-import Larkstet_Sound from './sound_components/Larkstet_Sound.vue'
-import TiksimGala_Sound from './sound_components/TiksimGala_Sound.vue'
+import Larkstet_Sound from './sound_components/persons_or_star/Larkstet_Sound.vue'
+import TiksimGala_Sound from './sound_components/persons_or_star/TiksimGala_Sound.vue'
+import SitoVajag_Sound from './sound_components/persons_or_star/SitoVajag_Sound.vue'
+import Jautajumi_Sound from  './sound_components/persons_or_star/Jautajumi_Sound.vue'
 import Cat1_Sound from './sound_components/cat/Cat1_Sound.vue'
 import Cat2_Sound from './sound_components/cat/Cat2_Sound.vue'
 import Cat3_Sound from './sound_components/cat/Cat3_Sound.vue'
@@ -29,6 +31,8 @@ export default {
   components: {
     Larkstet_Sound,
     TiksimGala_Sound,
+    SitoVajag_Sound,
+    Jautajumi_Sound,
     Cat1_Sound,
     Cat2_Sound,
     Cat3_Sound,
@@ -51,6 +55,8 @@ export default {
     <Cat6_Sound></Cat6_Sound>
     <Cat7_Sound></Cat7_Sound>
     <TiksimGala_Sound />
+    <SitoVajag_Sound />
+    <Jautajumi_Sound/>
     <img
       src="../assets/imagesAll/ja.png"
       alt="janis"

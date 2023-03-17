@@ -35,8 +35,8 @@ export default {
     <img src="@/assets/imagesAll/dj.png" alt="control table for dj" class="dj" />
     <div class="change-beats">
       {{ volume }}
-      <button class="change-volume__lower lower" @click="handleClick1">-</button>
-      <button class="change-volume__louder louder" @click="handleClick2">+</button>
+      <button class="change-volume__lower lower" @click="handleClick1" v-if="volume>0">-</button>
+      <button class="change-volume__louder louder" @click="handleClick2" v-if="volume<1">+</button>
       <FirstBeatButton :volume1="volume" />
       <SecondBeatButton :volume="volume" />
       <ThirdBeatButton :volume="volume" />
@@ -53,7 +53,7 @@ export default {
   position: absolute;
   bottom: 0px;
   right: 0px;
-  z-index: 100;
+  z-index: 0;
   width: 500px;
 }
 .dj:hover {

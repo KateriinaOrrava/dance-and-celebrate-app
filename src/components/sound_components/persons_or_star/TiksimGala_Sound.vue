@@ -23,5 +23,20 @@ export default {
 </script>
 
 <template>
-  <Button @click="handleClick" label="Control knobs">tiksim_gala</Button>
+  <img src="@/assets/imagesAll/ja2_star.png" @click="handleClick" class="janis-tiksim-gala" />
 </template>
+<style>
+.janis-tiksim-gala {
+  width: 20px;
+  cursor: pointer;
+  position: absolute;
+  left: 300px;
+  top: 100px;
+  z-index: 2;
+  transition: width 0.3s ease-in-out;
+}
+.janis-tiksim-gala:hover {
+  width: 100px;
+  z-index: 2;
+}
+</style>

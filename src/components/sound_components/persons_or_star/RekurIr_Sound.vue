@@ -22,5 +22,20 @@ export default {
 </script>
 
 <template>
-  <Button @click="handleClick" label="Control knobs">Re, kur ir</Button>
+<img src="@/assets/imagesAll/el1-star.png" @click="handleClick" class="elvis-re-kur-ir" />
 </template>
+<style>
+.elvis-re-kur-ir {
+  width: 20px;
+  cursor: pointer;
+  position: absolute;
+  right: 50px;
+  top: 200px;
+  z-index: 2;
+  transition: width 0.3s ease-in-out;
+}
+.elvis-re-kur-ir:hover {
+  width: 100px;
+  z-index: 2;
+}
+</style>

@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
 import vajag_visu from '../assets/sounds/voices/vajag_visu.mp3'
-import RekurIr_Sound from './sound_components/RekurIr_Sound.vue'
+import RekurIr_Sound from './sound_components/persons_or_star/RekurIr_Sound.vue'
 import DjControl_Sound from './sound_components/DjControl_Sound.vue'
 // import Button from './Button.vue'
 export default {
@@ -30,7 +30,7 @@ export default {
   <RekurIr_Sound />
   <img
     @click="handleClick"
-    src="../assets/imagesAll/el.png"
+    src="../assets/imagesAll/el2.png"
     alt="elvis"
     class="elvis-container__image"
   />
@@ -39,14 +39,15 @@ export default {
 <style>
 .elvis-container__image {
   position: absolute;
-  width: 280px;
-  bottom: 210px;
+  width:330px;
+  bottom: 170px;
   right: -5px;
+  z-index: 2;
   transition: width 0.3s ease-in-out;
 
 }
 .elvis-container__image:hover {
-  width: 330px;
+  width: 360px;
 }
 .elvis-container {
   position: relative;
