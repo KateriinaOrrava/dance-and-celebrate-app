@@ -14,11 +14,8 @@ export default {
       volume.value = vol
     }
 
-    const volumeArray = [{ icon: '🔈' }, { icon: '🔉' }, { icon: '🔊' }]
-
     return {
       handleClick,
-      volumeArray,
       volume
     }
   },
@@ -42,15 +39,6 @@ export default {
         <span class="change-beats__volume-text--span">VOLUME: {{ volume }}</span>
       </div>
       <div class="change-beats__volume">
-        <div
-          class="change-beats__volume--single-button"
-          v-for="volumeElement in volumeArray"
-          :key="volumeElement.icon"
-        >
-          <!-- <button @click="handleClick(volumeElement.volume)" class="change-beats__sound-button">
-            {{ volumeElement.icon }}
-          </button> -->
-        </div>
       </div>
       <input type="range" v-model.number="volume" min="0" max="1" step="0.01" />
       <div class="change-beats__tracks">
