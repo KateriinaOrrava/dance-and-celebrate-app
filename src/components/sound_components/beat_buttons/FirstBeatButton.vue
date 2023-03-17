@@ -7,21 +7,28 @@ export default {
   props: ['volume1'],
   setup(volume1) {
     let beatPlaying = false
+
     let volume = ref(0.1)
+
     const { play, stop } = useSound(beat1sound, {
       volume,
       interrupt: true
     })
-    const handleClick = () => {
-      console.log(volume1)
+
+    const changeBeat = () => {
+      volume.value = 0.1
       if (beatPlaying === true) {
         stop()
         beatPlaying = !beatPlaying
       } else {
         beatPlaying = !beatPlaying
+        volume1 ? (volume.value = volume1.volume1) : (volume.value = 0.1)
         play()
-        volume1? volume.value = volume1.volume1 : volume.value = 0.1
       }
+    }
+
+    const handleClick = () => {
+      changeBeat()
     }
     return {
       handleClick
@@ -33,6 +40,7 @@ export default {
 <template>
   <button class="change-beats__1 change-beat" @click="handleClick">1</button>
 </template>
+
 <style>
 .change-beats {
   display: flex;

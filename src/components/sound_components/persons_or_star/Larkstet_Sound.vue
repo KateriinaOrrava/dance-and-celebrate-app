@@ -1,19 +1,21 @@
 <script lang="ts">
 import { ref } from 'vue'
-
 import { useSound } from '@vueuse/sound'
-
 import larkstet from '@/assets/sounds/voices/larkstet.mp3'
+
 export default {
   setup() {
     const volume = ref(1)
+
     const { play } = useSound(larkstet, {
       volume,
       interrupt: true
     })
+
     const handleClick = () => {
       play()
     }
+
     return {
       handleClick
     }
@@ -24,6 +26,7 @@ export default {
 <template>
   <img src="@/assets/imagesAll/ja1_star.png" @click="handleClick" class="janis-pietiks-larkstet" />
 </template>
+
 <style>
 .janis-pietiks-larkstet {
   width: 20px;
@@ -35,7 +38,7 @@ export default {
   transition: width 0.3s ease-in-out;
 }
 .janis-pietiks-larkstet:hover {
-  width: 100px;
+  width: 200px;
   z-index: 2;
 }
 </style>

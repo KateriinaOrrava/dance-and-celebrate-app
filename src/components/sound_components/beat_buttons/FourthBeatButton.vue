@@ -3,27 +3,34 @@ import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
 import beat4sound from '@/assets/sounds/beat/into-the-night-20928.mp3'
 
-
 export default {
-    props: ['volume'],
-  setup() {
+  props: ['volume1'],
+  setup(volume1) {
     let beatPlaying = false
+
     const volume = ref(0.1)
 
     const { play, stop } = useSound(beat4sound, {
       volume,
       interrupt: true
     })
-    const handleClick = () => {
+
+    const changeBeat = () => {
       volume.value = 0.1
       if (beatPlaying === true) {
         stop()
         beatPlaying = !beatPlaying
       } else {
         beatPlaying = !beatPlaying
+        volume1 ? (volume.value = volume1.volume1) : (volume.value = 0.1)
         play()
       }
     }
+
+    const handleClick = () => {
+      changeBeat()
+    }
+
     return {
       handleClick
     }
@@ -34,6 +41,7 @@ export default {
 <template>
   <button class="change-beats__3 change-beat" @click="handleClick">4</button>
 </template>
+
 <style>
 .change-beats {
   display: flex;

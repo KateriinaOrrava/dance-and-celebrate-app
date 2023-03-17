@@ -4,7 +4,8 @@ import { useSound } from '@vueuse/sound'
 import beat3sound from '@/assets/sounds/beat/inspiring-cinematic-ambient-116199.mp3'
 
 export default {
-  setup() {
+  props: ['volume1'],
+  setup(volume1) {
     let beatPlaying = false
     const volume = ref(0.1)
 
@@ -12,16 +13,23 @@ export default {
       volume,
       interrupt: true
     })
-    const handleClick = () => {
+
+    const changeBeat = () => {
       volume.value = 0.1
       if (beatPlaying === true) {
         stop()
         beatPlaying = !beatPlaying
       } else {
         beatPlaying = !beatPlaying
+        volume1 ? (volume.value = volume1.volume1) : (volume.value = 0.1)
         play()
       }
     }
+
+    const handleClick = () => {
+      changeBeat()
+    }
+
     return {
       handleClick
     }
@@ -32,6 +40,7 @@ export default {
 <template>
   <button class="change-beats__3 change-beat" @click="handleClick">3</button>
 </template>
+
 <style>
 .change-beats {
   display: flex;

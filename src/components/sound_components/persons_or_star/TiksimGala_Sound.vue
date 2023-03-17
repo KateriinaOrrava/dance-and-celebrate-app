@@ -2,19 +2,21 @@
 import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
 import tiksim_gala from '@/assets/sounds/voices/tiksim_gala.mp3'
-// import Button from './Button.vue'
+
 export default {
-  // components: { Button },
   setup() {
     const volume = ref(0.1)
+
     const { play } = useSound(tiksim_gala, {
       volume,
       interrupt: true
     })
+
     const handleClick = () => {
       volume.value = parseFloat(Math.random().toFixed(2))
       play()
     }
+
     return {
       handleClick
     }
@@ -25,6 +27,7 @@ export default {
 <template>
   <img src="@/assets/imagesAll/ja2_star.png" @click="handleClick" class="janis-tiksim-gala" />
 </template>
+
 <style>
 .janis-tiksim-gala {
   width: 20px;
@@ -36,7 +39,7 @@ export default {
   transition: width 0.3s ease-in-out;
 }
 .janis-tiksim-gala:hover {
-  width: 100px;
+  width: 200px;
   z-index: 2;
 }
 </style>

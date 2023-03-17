@@ -1,19 +1,21 @@
 <script lang="ts">
 import { ref } from 'vue'
-
 import { useSound } from '@vueuse/sound'
-
 import jautajumi1 from '@/assets/sounds/voices/jautajum1.mp3'
+
 export default {
   setup() {
     const volume = ref(1)
+
     const { play } = useSound(jautajumi1, {
       volume,
       interrupt: true
     })
+
     const handleClick = () => {
       play()
     }
+
     return {
       handleClick
     }
@@ -23,12 +25,7 @@ export default {
 
 <template>
   <TheWelcome />
-  <img
-    @click="handleClick"
-    src="@/assets/imagesAll/ja5_star.png"
-    alt=""
-    class="janis-jautajumi"
-  />
+  <img @click="handleClick" src="@/assets/imagesAll/ja5_star.png" alt="" class="janis-jautajumi" />
 </template>
 
 <style>
@@ -42,7 +39,7 @@ export default {
   transition: width 0.2s ease-in-out;
 }
 .janis-jautajumi:hover {
-  width: 100px;
+  width: 200px;
   z-index: 2;
 }
 </style>

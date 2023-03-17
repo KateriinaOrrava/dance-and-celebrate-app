@@ -1,5 +1,4 @@
 <script lang="ts">
-import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
 import vajag_visu from '../assets/sounds/voices/vajag_visu.mp3'
 import RekurIr_Sound from './sound_components/persons_or_star/RekurIr_Sound.vue'
@@ -9,17 +8,21 @@ export default {
   components: { RekurIr_Sound, DjControl_Sound },
   // components: { Button },
   setup() {
-    const volume = ref(0.1)
-    const { play } = useSound(vajag_visu, {
-      volume,
+    const { play, stop } = useSound(vajag_visu, {
       interrupt: true
     })
+
     const handleClick = () => {
-      volume.value = parseFloat(Math.random().toFixed(2))
       play()
     }
+
+    const handleDoubleClick = () => {
+      stop()
+    }
+
     return {
-      handleClick
+      handleClick,
+      handleDoubleClick
     }
   }
 }
@@ -30,6 +33,7 @@ export default {
   <RekurIr_Sound />
   <img
     @click="handleClick"
+    @dblclick="handleDoubleClick"
     src="../assets/imagesAll/el2.png"
     alt="elvis"
     class="elvis-container__image"
@@ -38,13 +42,13 @@ export default {
 
 <style>
 .elvis-container__image {
+  cursor:pointer;
   position: absolute;
-  width:330px;
+  width: 330px;
   bottom: 170px;
   right: -5px;
   z-index: 2;
   transition: width 0.3s ease-in-out;
-
 }
 .elvis-container__image:hover {
   width: 360px;

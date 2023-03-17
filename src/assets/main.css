@@ -8,6 +8,7 @@
 }
 body {
   background-color: black;
+  min-width: 1115px;
   display: flex;
   align-items: center;
   justify-content: center;

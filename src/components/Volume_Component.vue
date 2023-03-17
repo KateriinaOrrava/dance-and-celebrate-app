@@ -24,17 +24,20 @@ export default defineComponent({
   }
 })
 </script>
+
 <template>
   <div>
-    <div class="volume-bar" :style="{ width: volumePercent }"><p class="volume">{{ state.volume }}</p></div>
+    <div class="volume-bar" :style="{ width: volumePercent }">
+      <p class="volume">{{ state.volume }}</p>
+    </div>
     <input type="range" min="0" max="100" v-model="state.volume" @input="updateVolume" />
   </div>
 </template>
 
 <style scoped>
-input[type="range"] {
-  width:100%;
-  background-color:red;
+input[type='range'] {
+  width: 100%;
+  background-color: red;
 }
 .volume-bar {
   height: 10px;

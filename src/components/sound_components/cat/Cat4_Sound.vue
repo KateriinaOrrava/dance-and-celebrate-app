@@ -2,19 +2,20 @@
 import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
 import many from '@/assets/sounds/cats/many.mp3'
-// import Button from './Button.vue'
+
 export default {
-  // components: { Button },
   setup() {
     const volume = ref(0.1)
     const { play } = useSound(many, {
       volume,
       interrupt: true
     })
+
     const handleClick = () => {
       volume.value = parseFloat(Math.random().toFixed(2))
       play()
     }
+
     return {
       handleClick
     }
@@ -25,6 +26,7 @@ export default {
 <template>
   <img src="@/assets/imagesAll/3cats.png" alt="" class="cat4 3cats" @click="handleClick" />
 </template>
+
 <style>
 .cat4 {
   cursor: pointer;
@@ -35,7 +37,7 @@ export default {
   z-index: 3;
   transition: width 0.3s ease-in-out;
 }
-.cat4:hover{
-    width: 430px;
+.cat4:hover {
+  width: 430px;
 }
 </style>

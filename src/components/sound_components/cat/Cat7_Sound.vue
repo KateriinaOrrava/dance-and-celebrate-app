@@ -1,17 +1,17 @@
 <script lang="ts">
-import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
 import orange from '@/assets/sounds/cats/orange.mp3'
-export default {
-  // components: { Button },
-  setup() {
 
+export default {
+  setup() {
     const { play } = useSound(orange, {
       interrupt: true
     })
+
     const handleClick = () => {
       play()
     }
+
     return {
       handleClick
     }
@@ -22,6 +22,7 @@ export default {
 <template>
   <img src="@/assets/imagesAll/orange.png" alt="red-cat" class="cat7 orange" @click="handleClick" />
 </template>
+
 <style>
 .cat7 {
   cursor: pointer;

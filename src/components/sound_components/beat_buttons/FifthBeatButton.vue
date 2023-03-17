@@ -4,24 +4,33 @@ import { useSound } from '@vueuse/sound'
 import beat5sound from '@/assets/sounds/beat/sexy-fashion-beats-simulate-11176.mp3'
 
 export default {
-    props: ['volume'],
-  setup() {
+  props: ['volume1'],
+  setup(volume1) {
     let beatPlaying = false
+
     const volume = ref(0.1)
+
     const { play, stop } = useSound(beat5sound, {
       volume,
       interrupt: true
     })
-    const handleClick = () => {
+
+    const changeBeat = () => {
       volume.value = 0.1
       if (beatPlaying === true) {
         stop()
         beatPlaying = !beatPlaying
       } else {
         beatPlaying = !beatPlaying
+        volume1 ? (volume.value = volume1.volume1) : (volume.value = 0.1)
         play()
       }
     }
+
+    const handleClick = () => {
+      changeBeat()
+    }
+
     return {
       handleClick
     }

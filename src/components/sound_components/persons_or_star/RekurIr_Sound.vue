@@ -4,16 +4,18 @@ import { useSound } from '@vueuse/sound'
 import elvis from '@/assets/sounds/voices/elvis.mp3'
 
 export default {
-
   setup() {
     const volume = ref(1)
+
     const { play } = useSound(elvis, {
       volume,
       interrupt: true
     })
+
     const handleClick = () => {
       play()
     }
+
     return {
       handleClick
     }
@@ -22,8 +24,9 @@ export default {
 </script>
 
 <template>
-<img src="@/assets/imagesAll/el1-star.png" @click="handleClick" class="elvis-re-kur-ir" />
+  <img src="@/assets/imagesAll/el1-star.png" @click="handleClick" class="elvis-re-kur-ir" />
 </template>
+
 <style>
 .elvis-re-kur-ir {
   width: 20px;
@@ -35,7 +38,7 @@ export default {
   transition: width 0.3s ease-in-out;
 }
 .elvis-re-kur-ir:hover {
-  width: 100px;
+  width: 200px;
   z-index: 2;
 }
 </style>

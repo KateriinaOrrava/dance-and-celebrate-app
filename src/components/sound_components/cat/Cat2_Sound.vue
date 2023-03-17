@@ -1,18 +1,13 @@
 <script lang="ts">
-import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
 import hiss from '@/assets/sounds/cats/Hiss.wav'
 
 export default {
-  // components: { Button },
   setup() {
-    const volume = ref(0.1)
     const { play } = useSound(hiss, {
-      volume,
       interrupt: true
     })
     const handleClick = () => {
-      volume.value = parseFloat(Math.random().toFixed(2))
       play()
     }
     return {
@@ -25,11 +20,12 @@ export default {
 <template>
   <img
     src="@/assets/imagesAll/Screenshot 2023-03-15 195538.png"
-    alt=""
+    alt="grumpy cat noise"
     class="cat2 grumpy"
     @click="handleClick"
   />
 </template>
+
 <style>
 .cat2 {
   cursor: pointer;
@@ -42,7 +38,7 @@ export default {
   z-index: 3;
   transition: width 0.3s ease-in-out;
 }
-.cat2:hover:hover{
-    width: 250px;
+.cat2:hover:hover {
+  width: 250px;
 }
 </style>
