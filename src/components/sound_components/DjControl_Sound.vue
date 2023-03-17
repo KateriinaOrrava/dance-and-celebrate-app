@@ -14,11 +14,7 @@ export default {
       volume.value = vol
     }
 
-    const volumeArray = [
-      { icon: '🔈' },
-      { icon: '🔉' },
-      { icon: '🔊' }
-    ]
+    const volumeArray = [{ icon: '🔈' }, { icon: '🔉' }, { icon: '🔊' }]
 
     return {
       handleClick,
@@ -62,7 +58,7 @@ export default {
         <SecondBeatButton :volume="volume" />
         <ThirdBeatButton :volume="volume" />
         <FourthBeatButton :volume="volume" />
-        <FifthBeatButton :volume1="volume" />
+        <FifthBeatButton :volume="volume" />
       </div>
     </div>
   </div>
@@ -82,7 +78,7 @@ export default {
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  opacity: 0.1;
+  opacity: 0;
   position: absolute;
   bottom: 120px;
   right: 150px;
