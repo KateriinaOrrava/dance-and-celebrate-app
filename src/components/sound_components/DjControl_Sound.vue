@@ -13,10 +13,11 @@ export default {
     const handleClick = (vol: number) => {
       volume.value = vol
     }
+
     const volumeArray = [
-      { volume: 0, icon: '🔈' },
-      { volume: 0.3, icon: '🔉' },
-      { volume: 1, icon: '🔊' }
+      { icon: '🔈' },
+      { icon: '🔉' },
+      { icon: '🔊' }
     ]
 
     return {
@@ -48,14 +49,14 @@ export default {
         <div
           class="change-beats__volume--single-button"
           v-for="volumeElement in volumeArray"
-          :key="volumeElement.volume"
+          :key="volumeElement.icon"
         >
-          <button @click="handleClick(volumeElement.volume)" class="change-beats__sound-button">
+          <!-- <button @click="handleClick(volumeElement.volume)" class="change-beats__sound-button">
             {{ volumeElement.icon }}
-          </button>
+          </button> -->
         </div>
       </div>
-
+      <input type="range" v-model="volume" min="0" max="1" step="0.01" />
       <div class="change-beats__tracks">
         <FirstBeatButton :volume1="volume" />
         <SecondBeatButton :volume1="volume" />
@@ -108,7 +109,7 @@ export default {
   border-radius: 50%;
   font-size: larger;
   cursor: pointer;
-  padding:5px;
+  padding: 5px;
 }
 .change-beats__sound-button:hover {
   background-color: rgb(22, 22, 20);

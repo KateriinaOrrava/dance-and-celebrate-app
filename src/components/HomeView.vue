@@ -1,7 +1,7 @@
 <script lang="ts">
 import JanisComponent from '@/components/JanisComponent.vue'
 import ElvisComponents from '@/components/ElvisComponent.vue'
-// import Volume_Component from './Volume_Component.vue'
+import Volume_Component from './Volume_Component.vue'
 import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
 import elvis from '@/assets/sounds/voices/elvis.mp3'
@@ -9,8 +9,8 @@ import elvis from '@/assets/sounds/voices/elvis.mp3'
 export default {
   components: {
     JanisComponent,
-    ElvisComponents
-    // Volume_Component,
+    ElvisComponents,
+    Volume_Component
   },
 
   setup() {
@@ -34,7 +34,7 @@ export default {
 
 <template class="home">
   <!-- <img src="@/assets/imagesAll/curtains.jpg" alt="" class="curtains" /> -->
-  <!-- <Volume_Component/> -->
+  <Volume_Component/>
   <div class="content-container">
     <div class="content-container__janis-part"><JanisComponent /></div>
     <div class="content-container__elvis-part"><ElvisComponents /></div>

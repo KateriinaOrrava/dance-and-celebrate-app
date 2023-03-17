@@ -7,7 +7,7 @@ export default {
   props: ['volume1'],
   setup(volume1) {
     let beatPlaying = false
-
+    console.log('123',volume1)
     let volume = ref(0.1)
 
     const { play, stop } = useSound(beat1sound, {

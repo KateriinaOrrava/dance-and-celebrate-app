@@ -12,7 +12,7 @@ export default {
 
     const { play, stop } = useSound(beat4sound, {
       volume,
-      interrupt: true
+      interrupt: false
     })
 
     const changeBeat = () => {
