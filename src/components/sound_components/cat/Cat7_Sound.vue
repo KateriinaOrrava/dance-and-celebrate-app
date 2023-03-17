@@ -1,17 +1,15 @@
 <script lang="ts">
 import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
-import yellow from '@/assets/sounds/cats/orange.wav'
+import orange from '@/assets/sounds/cats/orange.mp3'
 export default {
   // components: { Button },
   setup() {
-    const volume = ref(1)
-    const { play } = useSound(yellow, {
-      volume,
+
+    const { play } = useSound(orange, {
       interrupt: true
     })
     const handleClick = () => {
-      volume.value = parseFloat(Math.random().toFixed(2))
       play()
     }
     return {

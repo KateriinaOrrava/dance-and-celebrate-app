@@ -56,10 +56,6 @@ export default {
   z-index: 0;
   width: 500px;
 }
-.dj:hover {
-  width: 520px;
-  transition: width 0.2s ease-in-out;
-}
 .change-beats {
   display: flex;
   gap: 5px;
