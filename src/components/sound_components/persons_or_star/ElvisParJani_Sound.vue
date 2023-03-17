@@ -1,13 +1,13 @@
 <script lang="ts">
 import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
-import jautajumi1 from '@/assets/sounds/voices/jautajum1.mp3'
+import janisVaras from '@/assets/sounds/voices/janisVaras.mp3'
 
 export default {
   setup() {
     const volume = ref(1)
 
-    const { play } = useSound(jautajumi1, {
+    const { play } = useSound(janisVaras, {
       volume,
       interrupt: true
     })
