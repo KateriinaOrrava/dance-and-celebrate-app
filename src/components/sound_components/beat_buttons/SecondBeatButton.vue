@@ -1,36 +1,32 @@
 <script lang="ts">
+import { toRef } from 'vue'
 import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
 import beat2sound from '@/assets/sounds/beat/electronic-future-beats-117997.mp3'
 
 export default {
-  props: ['volume1'],
-  setup(volume1) {
-    let beatPlaying = false
+  props: {
+    volume: {
+      type: Number,
+      required: true
+    }
+  },
+  
+  setup(props) {
+    const volume = toRef(props, 'volume')
 
-    const volume = ref(0.1)
-
-    const { play, stop } = useSound(beat2sound, {
+    const { isPlaying, play, stop } = useSound(beat2sound, {
       volume,
       interrupt: true
     })
 
-    const changeBeat = () => {
-      volume.value = 0.1
-      if (beatPlaying === true) {
+    const handleClick = () => {
+      if (isPlaying.value) {
         stop()
-        beatPlaying = !beatPlaying
       } else {
-        beatPlaying = !beatPlaying
-        volume1 ? (volume.value = volume1.volume1) : (volume.value = 0.1)
         play()
       }
     }
-
-    const handleClick = () => {
-      changeBeat()
-    }
-
     return {
       handleClick
     }

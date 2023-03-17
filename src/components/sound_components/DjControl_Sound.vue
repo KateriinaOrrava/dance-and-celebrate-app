@@ -59,9 +59,9 @@ export default {
       <input type="range" v-model.number="volume" min="0" max="1" step="0.01" />
       <div class="change-beats__tracks">
         <FirstBeatButton :volume="volume" />
-        <SecondBeatButton :volume1="volume" />
-        <ThirdBeatButton :volume1="volume" />
-        <FourthBeatButton :volume1="volume" />
+        <SecondBeatButton :volume="volume" />
+        <ThirdBeatButton :volume="volume" />
+        <FourthBeatButton :volume="volume" />
         <FifthBeatButton :volume1="volume" />
       </div>
     </div>

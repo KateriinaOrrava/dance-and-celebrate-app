@@ -1,35 +1,32 @@
 <script lang="ts">
+import { toRef } from 'vue'
 import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
 import beat3sound from '@/assets/sounds/beat/inspiring-cinematic-ambient-116199.mp3'
 
 export default {
-  props: ['volume1'],
-  setup(volume1) {
-    let beatPlaying = false
-    const volume = ref(0.1)
+  props: {
+    volume: {
+      type: Number,
+      required: true
+    }
+  },
+  
+  setup(props) {
+    const volume = toRef(props, 'volume')
 
-    const { play, stop } = useSound(beat3sound, {
+    const { isPlaying, play, stop } = useSound(beat3sound, {
       volume,
       interrupt: true
     })
 
-    const changeBeat = () => {
-      volume.value = 0.1
-      if (beatPlaying === true) {
+    const handleClick = () => {
+      if (isPlaying.value) {
         stop()
-        beatPlaying = !beatPlaying
       } else {
-        beatPlaying = !beatPlaying
-        volume1 ? (volume.value = volume1.volume1) : (volume.value = 0.1)
         play()
       }
     }
-
-    const handleClick = () => {
-      changeBeat()
-    }
-
     return {
       handleClick
     }

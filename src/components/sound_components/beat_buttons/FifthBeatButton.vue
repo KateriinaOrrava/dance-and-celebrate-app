@@ -1,36 +1,32 @@
 <script lang="ts">
+import { toRef } from 'vue'
 import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
 import beat5sound from '@/assets/sounds/beat/sexy-fashion-beats-simulate-11176.mp3'
 
 export default {
-  props: ['volume1'],
-  setup(volume1) {
-    let beatPlaying = false
+  props: {
+    volume: {
+      type: Number,
+      required: true
+    }
+  },
 
-    const volume = ref(0.1)
+  setup(props) {
+    const volume = toRef(props, 'volume')
 
-    const { play, stop } = useSound(beat5sound, {
+    const { isPlaying, play, stop } = useSound(beat5sound, {
       volume,
-      interrupt: false
+      interrupt: true
     })
 
-    const changeBeat = () => {
-      volume.value = 0.1
-      if (beatPlaying === true) {
+    const handleClick = () => {
+      if (isPlaying.value) {
         stop()
-        beatPlaying = !beatPlaying
       } else {
-        beatPlaying = !beatPlaying
-        volume1 ? (volume.value = volume1.volume1) : (volume.value = 0.1)
         play()
       }
     }
-
-    const handleClick = () => {
-      changeBeat()
-    }
-
     return {
       handleClick
     }
