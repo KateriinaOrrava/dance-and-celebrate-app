@@ -1,13 +1,14 @@
 <script lang="ts">
-  import { RouterLink } from 'vue-router'    
+import { RouterLink } from 'vue-router'
 import { useSound } from '@vueuse/sound'
+import ElvisParJani_Sound from './sound_components/persons_or_star/ElvisParJani_Sound.vue'
 import vajag_visu from '../assets/sounds/voices/vajag_visu.mp3'
 import RekurIr_Sound from './sound_components/persons_or_star/RekurIr_Sound.vue'
 import DjControl_Sound from './sound_components/DjControl_Sound.vue'
-// import Button from './Button.vue'
+
 export default {
-  components: { RekurIr_Sound, DjControl_Sound },
-  // components: { Button },
+  components: { RekurIr_Sound, DjControl_Sound, ElvisParJani_Sound },
+
   setup() {
     const { play, stop } = useSound(vajag_visu, {
       interrupt: true
@@ -30,9 +31,10 @@ export default {
 </script>
 
 <template class="elvis-container">
-<RouterLink to="/"><h2>BACK</h2></RouterLink>
+  <RouterLink to="/"><h5>BACK</h5></RouterLink>
   <DjControl_Sound />
   <RekurIr_Sound />
+  <ElvisParJani_Sound />
   <img
     @click="handleClick"
     @dblclick="handleDoubleClick"
@@ -44,7 +46,9 @@ export default {
 
 <style>
 .elvis-container__image {
-  cursor:pointer;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🍔</text></svg>")
+      16 0,
+    auto;
   position: absolute;
   width: 330px;
   bottom: 170px;
