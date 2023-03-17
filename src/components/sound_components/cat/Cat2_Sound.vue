@@ -19,7 +19,7 @@ export default {
 
 <template>
   <img
-    src="@/assets/imagesAll/Screenshot 2023-03-15 195538.png"
+    src="@/assets/imagesAll/195538.png"
     alt="grumpy cat noise"
     class="cat2 grumpy"
     @click="handleClick"
