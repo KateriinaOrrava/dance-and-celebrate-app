@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { RouterLink } from 'vue-router'    
 import { useSound } from '@vueuse/sound'
 import vajag_visu from '../assets/sounds/voices/vajag_visu.mp3'
 import RekurIr_Sound from './sound_components/persons_or_star/RekurIr_Sound.vue'
@@ -29,6 +30,7 @@ export default {
 </script>
 
 <template class="elvis-container">
+<RouterLink to="/"><h2>BACK</h2></RouterLink>
   <DjControl_Sound />
   <RekurIr_Sound />
   <img

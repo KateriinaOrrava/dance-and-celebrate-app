@@ -1,34 +1,31 @@
 <script lang="ts">
+import { toRef } from 'vue'
 import { ref } from 'vue'
 import { useSound } from '@vueuse/sound'
 import beat1sound from '@/assets/sounds/beat/the-dying-110458.mp3'
 
 export default {
-  props: ['volume1'],
-  setup(volume1) {
-    let beatPlaying = false
-    console.log('123',volume1)
-    let volume = ref(0.1)
+  props: {
+    volume: {
+      type: Number,
+      required: true
+    }
+  },
 
-    const { play, stop } = useSound(beat1sound, {
+  setup(props) {
+    const volume = toRef(props, 'volume')
+
+    const { isPlaying, play, stop } = useSound(beat1sound, {
       volume,
       interrupt: true
     })
 
-    const changeBeat = () => {
-      volume.value = 0.1
-      if (beatPlaying === true) {
+    const handleClick = () => {
+      if (isPlaying.value) {
         stop()
-        beatPlaying = !beatPlaying
       } else {
-        beatPlaying = !beatPlaying
-        volume1 ? (volume.value = volume1.volume1) : (volume.value = 0.1)
         play()
       }
-    }
-
-    const handleClick = () => {
-      changeBeat()
     }
     return {
       handleClick

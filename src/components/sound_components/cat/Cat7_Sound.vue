@@ -1,6 +1,6 @@
 <script lang="ts">
 import { useSound } from '@vueuse/sound'
-import orange from '@/assets/sounds/cats/orange.mp3'
+import orange from '@/assets/sounds/cats/cute.wav'
 
 export default {
   setup() {
