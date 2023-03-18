@@ -31,7 +31,7 @@ export default {
 </script>
 
 <template class="elvis-container">
-  <RouterLink to="/"><h5>BACK</h5></RouterLink>
+  <RouterLink to="/" class="router-link"><h5 title="get back">🚪 EXIT</h5></RouterLink>
   <DjControl_Sound />
   <RekurIr_Sound />
   <ElvisParJani_Sound />

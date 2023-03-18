@@ -40,7 +40,7 @@ export default {
   transition: width 0.3s ease-in-out;
 }
 .janis-sito-vajag:hover {
-  width: 200px;
+  width: 150px;
   z-index: 2;
 }
 </style>

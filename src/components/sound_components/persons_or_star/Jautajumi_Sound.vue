@@ -35,13 +35,13 @@ export default {
       16 0,
     auto;
   position: absolute;
-  left: 0px;
+  right: 40%;
   top: 40%;
   z-index: 2;
   transition: width 0.2s ease-in-out;
 }
 .janis-jautajumi:hover {
-  width: 200px;
+  width: 150px;
   z-index: 2;
 }
 </style>

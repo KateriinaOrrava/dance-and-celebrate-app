@@ -41,7 +41,7 @@ export default {
   transition: width 0.2s ease-in-out;
 }
 .elvis-par-jani:hover {
-  width: 200px;
+  width: 150px;
   z-index: 2;
 }
 </style>

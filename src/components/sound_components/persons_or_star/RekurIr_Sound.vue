@@ -34,13 +34,13 @@ export default {
       16 0,
     auto;
   position: absolute;
-  right: 50px;
+  right: 500px;
   top: 200px;
   z-index: 2;
   transition: width 0.3s ease-in-out;
 }
 .elvis-re-kur-ir:hover {
-  width: 200px;
+  width: 150px;
   z-index: 2;
 }
 </style>

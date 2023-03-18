@@ -36,7 +36,7 @@ export default {
 
   position: absolute;
   left: -10px;
-  bottom: 200px;
+  bottom: 180px;
   z-index: 3;
   transition: width 0.3s ease-in-out;
 }

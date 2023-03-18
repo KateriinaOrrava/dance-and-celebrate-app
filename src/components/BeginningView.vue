@@ -6,18 +6,20 @@ export default {
 </script>
 
 <template class="beginning">
-  <h1 class="neonText">ARE YOU READY?!</h1>
-  <h2 class="neonText">
-    <RouterLink to="/celebrate"> LETS GO! </RouterLink>
+  <h3 class="neonText">ARE YOU READY?!</h3>
+  <h2 class="neonTextLink">
+    <RouterLink to="/celebrate" class="router-link">👉LETS GO! 👈 </RouterLink>
   </h2>
 </template>
 
 <style>
-h1 {
+h3 {
   color: WHITE;
   size: 3em;
 }
-
+.router-link {
+  text-decoration: none;
+}
 .beginning-button-to-celebration {
   width: 4em;
   height: 4em;
@@ -27,11 +29,28 @@ h1 {
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa,
     0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
 }
-h1,
+.neonTextLink {
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(223, 89, 116),
+    0 0 82px rgb(230, 34, 211), 0 0 92px rgb(229, 67, 113), 0 0 102px rgb(179, 98, 226),
+    0 0 151px rgb(212, 80, 229);
+}
+h3 {
+  text-align: right;
+  text-decoration: none;
+  font-size:2rem;
+  animation: flicker 1.5s infinite alternate;
+}
 h2 {
   text-align: right;
   text-decoration: none;
   font-size: 4.2rem;
+  animation: flicker 1.5s infinite alternate;
+}
+h5 {
+  text-align: right;
+  text-decoration: none;
+  font-size: 2rem;
   animation: flicker 1.5s infinite alternate;
 }
 @keyframes flicker {
